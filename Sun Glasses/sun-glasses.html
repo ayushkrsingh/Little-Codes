@@ -1,0 +1,236 @@
+<!-- ############# MADE BY AYUSH KUMAR SINGH &&&&&&&&&&&&&-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eye,Sun Glasses</title>
+</head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Comfortaa', cursive;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fffb00;
+}
+.box{
+    width: 100%;
+    height: 100%;
+}
+.join1{
+    position: absolute;
+    top: 19.7rem;
+    left: 63rem;
+    width: 30rem;
+    height: .7rem;
+    border-radius: 50%;
+    background: #04000c;
+}
+.join2{
+    position: absolute;
+    top: 25.5rem;
+    left: 75.2rem;
+    width: 5.4rem;
+    height: 1.2rem;
+    background: #000000;
+}
+.join2::after{
+    content: '';
+    position: absolute;
+    top: .7rem;
+    left: .85rem;
+    width: 3.9rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: #fffb00;
+}
+.glass1{
+    position: absolute;
+    top: 20rem;
+    left: 46rem;
+    width: 30rem;
+    height: 25rem;
+    border-radius: 70% 40% 85% 40% / 70% 40% 85% 55%;
+    border: 7px solid #000000;
+    background: #41ffef1a;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+.glass2{
+    position: absolute;
+    top: 20rem;
+    left: 80rem;
+    width: 30rem;
+    height: 25rem;
+    border-radius: 40% 70% 40% 85% / 40% 70% 55% 85%;
+    border: 7px solid #000000;
+    background: #41ffef1a;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+.glass1:hover, .glass2:hover{
+    backdrop-filter: none;
+}
+.side1{
+    position: absolute;
+    top: 29.5rem;
+    left: 43rem;
+    width: 4.5rem;
+    height: 3.5rem;
+    border-radius: 50% 25% 25% 0;
+    transform: rotate(4deg);
+    background: #000000;
+}
+.side2{
+    position: absolute;
+    top: 29.5rem;
+    left: 108.5rem;
+    width: 4.5rem;
+    height: 3.5rem;
+    border-radius: 25% 50% 0 25%;
+    transform: rotate(-4deg);
+    background: #000000;
+}
+.stick1{
+    position: absolute;
+    top: 30.5rem;
+    left: 44.5rem;
+    width: 40rem;
+    height: 3rem;
+    transform: rotate(3deg);
+    background: #000000;
+}
+.stick1::before{
+    content: '';
+    position: absolute;
+    top: .6rem;
+    left: 0;
+    width: 5rem;
+    height: 1.7rem;
+    border-radius: 5px;
+    background: #00ebeb;
+}
+.stick1::after{
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 40rem;
+    height: 1.4rem;
+    border-radius: 3000% 0 0 50%;
+    background: #fffb00;
+}
+.stick2{
+    position: absolute;
+    top: 30.5rem;
+    left: 71rem;
+    width: 40rem;
+    height: 3rem;
+    transform: rotate(-3deg);
+    background: black;
+}
+.stick2::before{
+    content: '';
+    position: absolute;
+    top: .6rem;
+    left: 35.5rem;
+    width: 5rem;
+    height: 1.7rem;
+    border-radius: 5px;
+    background: #00ebeb;
+}
+.stick2::after{
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 40rem;
+    height: 1.4rem;
+    border-radius: 0 3000% 50% 0;
+    background: #fffb00;
+}
+.stick-end1{
+    position: absolute;
+    top: 31rem;
+    left: 55rem;
+    width: 42rem;
+    height: 3rem;
+    border-radius: 1000% 0 0 0;
+    transform: rotate(6deg);
+    background: #000000;
+}
+.stick-end1::after{
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 9rem;
+    width: 36rem;
+    height: 10rem;
+    border-radius: 60%;
+    background: #fffb00;
+}
+
+.stick-end2{
+    position: absolute;
+    top: 31rem;
+    left: 55rem;
+    width: 40rem;
+    height: 3rem;
+    border-radius: 0 1000% 0 0;
+    transform: rotate(-6deg);
+    background: #000000;
+}
+.stick-end2::after{
+    content: '';
+    position: absolute;
+    top: 2.1rem;
+    left: -4rem;
+    width: 35rem;
+    height: 10rem;
+    border-radius: 60%;
+    background: #fffb00;
+}
+.box2{
+    position: absolute;
+    top: 30rem;
+    left: 150rem;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+}
+
+</style>
+
+<body>
+    <div class="box">
+        <div class="stick1"></div>
+        <div class="stick-end2"></div>
+        <div class="stick2"></div>
+        <div class="stick-end1"></div>
+        <div class="join1"></div>
+        <div class="join2"></div>
+        <div class="glass1"></div>
+        <div class="glass2"></div>
+        <div class="side1"></div>
+        <div class="side2"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

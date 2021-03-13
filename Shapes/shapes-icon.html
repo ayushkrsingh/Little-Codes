@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lemonada:wght@600&family=Potta+One&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #00312f;
+      user-select: none;
+    }
+
+    hr {
+      width: 100%;
+      height: 2px;
+      background-color: #0300c9;
+      /* outline: none; */
+      border: none;
+
+    }
+
+
+    .container {
+      width: 90%;
+      margin: auto;
+      /* height: 100%; */
+      background-color: #ffffff;
+    }
+
+    .a-lists {
+      margin: 1rem 2rem;
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.8em;
+      font-family: 'Comfortaa', cursive;
+      background-color: #6200ff;
+      color: #ffffff;
+      padding: 5px 10px;
+      margin-top: 0.4rem;
+      border-radius: 1em 0.2em 1em 0.2em;
+    }
+
+    .up-go{
+      position: fixed; 
+      bottom: 2rem; 
+      right: 3rem; 
+      border-bottom: 1px solid #ffffff;
+      font-size: 1.9em;
+      background-color: #000000; 
+      border-radius: 50%; 
+      padding: 0.2em 0.6em;
+      transition: transform 0.4s ease-out, background 0.4s ease-in-out, border 0.1s ease-in-out;
+    }
+    .up-go:hover{
+      color: black;
+      background: #2aff466b;
+      transform: scale(1.1) translateY(-15px);
+      border: none;
+      /* box-shadow: 0px 0px 2px 1px #ffc299; */
+      font-weight: 800;
+    }
+
+    h1 {
+      padding: 3rem 0 1rem 0;
+      font-family: 'Potta One', cursive;
+      color: darkgreen;
+      font-size: 3.8rem;
+      font-weight: 400;
+      border-bottom: 8px double #a7cbfa;
+      border-top: 8px solid #1265d3;
+    }
+
+    h2 {
+      padding: 2rem 0 1rem 0;
+      font-family: 'Lemonada', cursive;
+      font-size: 2.1rem;
+      font-weight: 400;
+    }
+
+    .square {
+      width: 140px;
+      height: 140px;
+      background: #f13000;
+    }
+
+    .rectangle {
+      width: 240px;
+      height: 140px;
+      background: #002ba1;
+    }
+
+
+    .circle {
+      width: 140px;
+      height: 140px;
+      background: #007706;
+      border-radius: 50%
+    }
+
+    .oval {
+      width: 200px;
+      height: 100px;
+      background: #f13000;
+      border-radius: 50%;
+    }
+
+    .triangle-up {
+      width: 0;
+      height: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-bottom: 140px solid #002ba1;
+    }
+
+    .triangle-down {
+      width: 0;
+      height: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-top: 140px solid #f13000;
+    }
+
+    .triangle-left {
+      width: 0;
+      height: 0;
+      border-top: 90px solid transparent;
+      border-right: 140px solid #007706;
+      border-bottom: 90px solid transparent;
+    }
+
+    .triangle-right {
+      width: 0;
+      height: 0;
+      border-top: 90px solid transparent;
+      border-left: 140px solid #002ba1;
+      border-bottom: 90px solid transparent;
+    }
+
+    .triangle-top-left {
+      width: 0;
+      height: 0;
+      border-top: 140px solid #f13000;
+      border-right: 140px solid transparent;
+    }
+
+    .triangle-top-right {
+      width: 0;
+      height: 0;
+      border-top: 140px solid #007706;
+      border-left: 140px solid transparent;
+    }
+
+    .triangle-bottom-left {
+      width: 0;
+      height: 0;
+      border-bottom: 140px solid #002ba1;
+      border-right: 140px solid transparent;
+    }
+
+    .triangle-bottom-right {
+      width: 0;
+      height: 0;
+      border-bottom: 140px solid  #f13000;
+      border-left: 140px solid transparent;
+    }
+
+
+
+    .curved-arrow {
+      position: relative;
+      width: 0;
+      height: 0;
+      border-top: 36px solid transparent;
+      border-right: 36px solid #bb004e;
+      transform: rotate(10deg);
+    }
+
+    .curved-arrow:after {
+      content: "";
+      position: absolute;
+      border: 0 solid transparent;
+      border-top: 12px solid #bb004e;
+      border-radius: 80px 0 0 0;
+      top: -48px;
+      left: -36px;
+      width: 48px;
+      height: 48px;
+      transform: rotate(50deg);
+    }
+
+    .trapezium {
+      border-bottom: 103px solid #007706;
+      border-left: 44px solid transparent;
+      border-right: 44px solid transparent;
+      width: 246px;
+    }
+
+    .parallelogram {
+      width: 150px;
+      height: 100px;
+      transform: skew(20deg);
+      background: #f13000;
+    }
+
+
+
+    .star-6 {
+      width: 0;
+      height: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-bottom: 140px solid #002ba1;
+      position: relative;
+    }
+
+    .star-6:after {
+      width: 0;
+      height: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-top: 140px solid #002ba1;
+      position: absolute;
+      content: "";
+      top: 40px;
+      left: -90px;
+    }
+
+
+
+    .star-5 {
+      margin: 50px 0;
+      position: relative;
+      display: block;
+      color: #007706;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #007706;
+      border-left: 100px solid transparent;
+      transform: rotate(35deg);
+    }
+
+    .star-5:before {
+      border-bottom: 80px solid #007706;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+
+    .star-5:after {
+      position: absolute;
+      display: block;
+      color: #007706;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #007706;
+      border-left: 100px solid transparent;
+      transform: rotate(-70deg);
+      content: '';
+    }
+
+
+
+    .pentagon {
+      position: relative;
+      width: 108px;
+      box-sizing: content-box;
+      border-width: 100px 35.8px 0;
+      border-style: solid;
+      border-color: #bb004e transparent;
+    }
+
+    .pentagon:before {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -169px;
+      left: -36.4px;
+      border-width: 0 90px 70px;
+      border-style: solid;
+      border-color: transparent transparent #bb004e;
+    }
+
+
+
+    .hexagon {
+      width: 159px;
+      height: 100px;
+      background: #f13000;
+      position: relative;
+    }
+
+    .hexagon::before {
+      content: "";
+      position: absolute;
+      top: -49.735px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 79px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 51px solid #f13000;
+    }
+
+    .hexagon::after {
+      content: "";
+      position: absolute;
+      bottom: -50.7px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 79px solid transparent;
+      border-right: 80px solid transparent;
+      border-top: 51px solid #f13000;
+    }
+
+    .octagon {
+      width: 178px;
+      height: 160px;
+      background: #002ba1;
+      position: relative;
+    }
+
+    .octagon:before {
+      content: "";
+      width: 100px;
+      height: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 39px solid #002ba1;
+      border-left: 39px solid #fff;
+      border-right: 39px solid #fff;
+    }
+
+    .octagon:after {
+      content: "";
+      width: 100px;
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 39px solid #002ba1;
+      border-left: 39px solid #fff;
+      border-right: 39px solid #fff;
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 180px;
+    }
+
+    .heart:before,
+    .heart:after {
+      position: absolute;
+      content: "";
+      left: 100px;
+      top: 0;
+      width: 100px;
+      height: 160px;
+      background: #fc1b1b;
+      border-radius: 100px 100px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    .infinity {
+      position: relative;
+      width: 212px;
+      height: 110px;
+      box-sizing: content-box;
+    }
+
+    .infinity:before,
+    .infinity:after {
+      content: "";
+      box-sizing: content-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      border: 20px solid #007706;
+      border-radius: 50px 50px 0 50px;
+      transform: rotate(-45deg);
+    }
+
+    .infinity:after {
+      left: auto;
+      right: 0;
+      border-radius: 50px 50px 50px 0;
+      transform: rotate(45deg);
+    }
+
+    .diamond-shield {
+      width: 0;
+      height: 0;
+      border: 80px solid transparent;
+      border-bottom: 40px solid #bb004e;
+      position: relative;
+      top: -80px;
+    }
+
+    .diamond-shield:after {
+      content: '';
+      position: absolute;
+      left: -80px;
+      top: 39px;
+      width: 0;
+      height: 0;
+      border: 80px solid transparent;
+      border-top: 130px solid #bb004e;
+    }
+
+    .cut-diamond {
+      border-style: solid;
+      border-color: transparent transparent #002ba1 transparent;
+      border-width: 0 50px 50px 50px;
+      height: 0;
+      width: 100px;
+      box-sizing: content-box;
+      position: relative;
+      margin: 40px 0 100px 0;
+    }
+
+    .cut-diamond:after {
+      content: "";
+      position: absolute;
+      top: 49px;
+      left: -50px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: #002ba1 transparent transparent transparent;
+      border-width: 140px 100px 0 100px;
+    }
+
+    .egg {
+      display: block;
+      width: 126px;
+      height: 180px;
+      background-color: rgb(235, 141, 0);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+    .pac-man {
+      width: 0px;
+      height: 0px;
+      border-right: 80px solid transparent;
+      border-top: 80px solid #f13000;
+      border-left: 80px solid #f13000;
+      border-bottom: 80px solid #f13000;
+      border-top-left-radius: 80px;
+      border-top-right-radius: 80px;
+      border-bottom-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+    }
+
+    .talk-bubble {
+      width: 233px;
+      height: 150px;
+      background: #007706;
+      position: relative;
+      border-radius: 20px;
+    }
+
+    .talk-bubble:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 52px;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-right: 52px solid #007706;
+      border-bottom: 20px solid transparent;
+    }
+
+    .rss {
+      width: 15em;
+      height: 15em;
+      border-radius: 3em;
+      background-color: #002ba1;
+      font-size: 14px;
+    }
+
+    .rss:before {
+      content: '';
+      z-index: 1;
+      display: block;
+      height: 5em;
+      width: 5em;
+      background: #d4f6ff;
+      border-radius: 50%;
+      position: relative;
+      top: 9em;
+      left: -3.4em;
+    }
+
+    .rss:after {
+      content: '';
+      display: block;
+      background: #002ba1;
+      width: 12em;
+      height: 12em;
+      top: -3em;
+      border-radius: 2.5em;
+      position: relative;
+      box-shadow:
+        -2em 2em 0 0 #d4f6ff inset,
+        -4em 4em 0 0 #002ba1 inset,
+        -6em 6em 0 0 #d4f6ff inset
+    }
+
+
+    .burst {
+      background: #f13000;
+      width: 160px;
+      height: 160px;
+      position: relative;
+      text-align: center;
+    }
+
+    .burst:before,
+    .burst:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 160px;
+      width: 160px;
+      background: #f13000;
+    }
+
+    .burst:before {
+      transform: rotate(60deg);
+    }
+
+    .burst:after {
+      transform: rotate(120deg);
+    }
+
+    .yin-yang {
+      width: 192px;
+      box-sizing: content-box;
+      height: 96px;
+      background: #ffffff;
+      border-color: #bb004e;
+      border-style: solid;
+      border-width: 4px 4px 100px 4px;
+      border-radius: 100%;
+      position: relative;
+    }
+
+    .yin-yang:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #ffffff;
+      border: 36px solid #bb004e;
+      border-radius: 100%;
+      width: 24px;
+      height: 24px;
+      box-sizing: content-box;
+    }
+
+    .yin-yang:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #bb004e;
+      border: 36px solid #ffffff;
+      border-radius: 100%;
+      width: 24px;
+      height: 24px;
+      box-sizing: content-box;
+    }
+
+    
+    .badge-ribbon {
+      position: relative;
+      background: #007706;
+      height: 130px;
+      width: 130px;
+      border-radius: 100px;
+    }
+    .badge-ribbon:before,
+    .badge-ribbon:after {
+      content: '';
+      position: absolute;
+      border-bottom: 110px solid #007706;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      top: 90px;
+      left: -12px;
+      transform: rotate(-140deg);
+    }
+    .badge-ribbon:after {
+      left: auto;
+      right: -12px;
+      transform: rotate(140deg);
+    }
+  
+    .space-invader {
+      box-shadow: 
+      0 0 0 1em #0051ff,
+      0 1em 0 1em #0f7e00,
+      -2.5em 1.5em 0 .5em #0f7e00,
+      2.5em 1.5em 0 .5em #0f7e00,
+      -3em -3em 0 0 #571e44,
+      3em -3em 0 0 #571e44,
+      -2em -2em 0 0 #571e44,
+      2em -2em 0 0 #571e44,
+      -3em -1em 0 0 #571e44,
+      -2em -1em 0 0 #571e44,
+      2em -1em 0 0 #571e44,
+      3em -1em 0 0 #571e44,
+      -4em 0 0 0 #8011ff,
+      -3em 0 0 0 #8011ff,
+      3em 0 0 0 #8011ff,
+      4em 0 0 0 #8011ff,
+      -5em 1em 0 0 #8011ff,
+      -4em 1em 0 0 #8011ff,
+      4em 1em 0 0 #8011ff,
+      5em 1em 0 0 #8011ff,
+      -5em 2em 0 0 #8011ff,
+      5em 2em 0 0 #8011ff,
+      -5em 3em 0 0 #8011ff,
+      -3em 3em 0 0 #0f7e00,
+      3em 3em 0 0 #0f7e00,
+      5em 3em 0 0 #8011ff,
+      -2em 4em 0 0 #ff0a53,
+      -1em 4em 0 0 #ff0a53,
+      1em 4em 0 0 #ff0a53,
+      2em 4em 0 0 #ff0a53;
+      background: #ff0a53;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      margin: 50px 0 70px 0px;
+    }
+    
+    .tv {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      margin: 20px 0;
+      background: #f13000;
+      border-radius: 50% / 10%;
+      /* color: white; */
+      text-align: center;
+      text-indent: .1em;
+    }
+    .tv:before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      right: -5%;
+      left: -5%;
+      background: inherit;
+      border-radius: 5% / 50%;
+    }
+    
+    .mag-glass {
+      font-size: 10em;
+      display: inline-block;
+      width: 0.4em;
+      box-sizing: content-box;
+      height: 0.4em;
+      border: 0.1em solid #bb004e;
+      position: relative;
+      border-radius: 0.35em;
+    }
+    .mag-glass:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: -0.25em;
+      bottom: -0.1em;
+      border-width: 0;
+      background: #bb004e;
+      width: 0.35em;
+      height: 0.08em;
+      transform: rotate(45deg);
+    }
+    
+    .facebook-icon {
+      background: #002ba1;
+      text-indent: -999em;
+      width: 200px;
+      height:  220px;
+      box-sizing: content-box;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      border: 30px solid #002ba1;
+      border-bottom: 0;
+    }
+    .facebook-icon:before {
+      content: "/20";
+      position: absolute;
+      background: #002ba1;
+      width: 80px;
+      height: 180px;
+      bottom: -60px;
+      right: -74px;
+      border: 40px solid #ffffff;
+      border-radius: 50px;
+      box-sizing: content-box;
+    }
+    .facebook-icon:after {
+      content: "/20";
+      position: absolute;
+      width: 110px;
+      top: 100px;
+      height: 40px;
+      background: #ffffff;
+      right: 10px;
+      box-sizing: content-box;
+    }
+    .moon {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      box-shadow: 30px 30px 0 0 #007706;
+      margin-right: 6rem;
+    }
+
+    
+  .lock {
+    font-size: 12px;
+    position: relative;
+    width: 18em;
+    height: 13em;
+    border-radius: 3em;
+    top: 10em;
+    box-sizing: border-box;
+    border: 3.5em solid #f13000;
+    border-right-width: 7.5em;
+    border-left-width: 7.5em;
+    margin: 0 0 12rem 0;
+  }
+  .lock:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: 2.5em solid #f13000;
+    width: 13em;
+    height: 14em;
+    left: 50%;
+    margin-left: -6.5em;
+    top: -12em;
+    border-top-left-radius: 7em;
+    border-top-right-radius: 7em;
+  }
+  .lock:after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: 1em solid #f13000;
+    width: 5em;
+    height: 7em;
+    border-radius: 2.5em;
+    left: 50%;
+    /* top: -1em; */
+    margin-left: -2.5em;
+  }
+  
+  
+    
+    div{
+      transition: filter 63s ease;
+    }
+    body:hover div{
+      filter: hue-rotate(5000deg);
+    }
+    
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <center>
+      <h1>List of Shapes</h1>
+    </center>
+
+    <div class="a-lists">
+
+      <a href="#sq">Square</a>
+      <a href="#rec">Rectangle</a>
+      <a href="#cir">Circle</a>
+      <a href="#oval">Oval</a>
+      <a href="#tri">Triangles</a>
+      <a href="#arrow">Curved-Arrow</a>
+      <a href="#trapz">Trapezium</a>
+      <a href="#paral">Parallelogram</a>
+      <a href="#star">Stars</a>
+      <a href="#penta">Pentagon</a>
+      <a href="#hexa">Hexagon</a>
+      <a href="#octa">Octagon</a>
+      <a href="#dil">Heart❤</a>
+      <a href="#infint">Infinity</a>
+      <a href="#shdimd">Diamond Shield</a>
+      <a href="#cutdimd">Cut Diamond</a>
+      <a href="#egg">Egg</a>
+      <a href="#pac">Pac-Man Shape</a>
+      <a href="#talkbox">Talk-Bubble</a>
+      <a href="#12brust">12Core-Brust</a>
+      <a href="#neg">Yin-Yang-Invert</a>
+      <a href="#badge">Winner-Badge</a>
+      <a href="#space">Space-Invader</a>
+      <a href="#tv">Youtube-TV-screen</a>
+      <a href="#glass">Magnifying Glass</a>
+      <a href="#facebook">Facebook-Icon</a>
+      <a href="#moon">Moon Shape</a>
+      <a href="#lock">Door-Lock</a><br><br>
+      <hr>
+
+    </div>
+
+
+    <center>
+      <p style="color: #b10245; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Please
+        like this code👍🥰</p>
+
+      <a href="#" class="up-go">⇧</a>
+
+      <h2 id="sq">Square</h2>
+      <div class="square"></div><br>
+      <hr>
+
+      <h2 id="rec">Rectangle</h2>
+      <div class="rectangle"></div><br>
+      <hr>
+
+      <h2 id="cir">Circle</h2>
+      <div class="circle"></div><br>
+      <hr>
+
+      <h2 id="oval">Oval</h2>
+      <div class="oval"></div><br>
+      <hr>
+
+      <h2 id="tri">Shape-Triangles</h2>
+      <div class="triangle-up"></div><br><br><br>
+      <div class="triangle-down"></div><br><br><br>
+      <div class="triangle-left"></div><br><br><br>
+      <div class="triangle-right"></div><br><br><br>
+      <div class="triangle-top-left"></div><br><br><br>
+      <div class="triangle-top-right"></div><br><br>
+      <div class="triangle-bottom-left"></div><br><br><br>
+      <div class="triangle-bottom-right"></div><br><br>
+      <hr>
+
+      <h2 id="arrow">Curved Tail Arrow</h2>
+      <div class="curved-arrow"></div><br><br>
+      <hr>
+
+      <h2 id="trapz">Trapezium</h2>
+      <div class="trapezium"></div><br><br>
+      <hr>
+
+      <h2 id="paral">Parallelogram</h2>
+      <div class="parallelogram"></div><br><br>
+      <hr>
+
+      <h2 id="star">Stars</h2>
+      <div class="star-6"></div><br><br><br><br><br><br>
+      <div class="star-5"></div><br><br>
+      <hr>
+
+      <h2 id="penta">Pentagon</h2><br><br><br><br>
+      <div class="pentagon"></div><br>
+      <hr>
+
+      <h2 id="hexa">Hexagon</h2><br><br>
+      <div class="hexagon"></div><br><br><br><br>
+      <hr>
+
+      <h2 id="octa">Octagon</h2>
+      <div class="octagon"></div><br><br>
+      <hr>
+
+      <h2 id="dil">Heart❤</h2>
+      <div class="heart"></div><br>
+      <hr>
+
+      <h2 id="infint">Infinity</h2>
+      <div class="infinity"></div><br>
+      <hr>
+
+      <h2 id="shdimd">Diamond Shield</h2>
+      <div class="diamond-shield"></div><br><br><br><br>
+      <hr>
+      <h2 id="cutdimd">Cut Diamond</h2>
+      <div class="cut-diamond"></div><br><br><br>
+      <hr>
+
+      <h2 id="egg">An Egg</h2>
+      <div class="egg"></div><br>
+      <hr>
+
+      <h2 id="pac">Pac-Man</h2>
+      <div class="pac-man"></div><br>
+      <hr>
+
+      <h2 id="talkbox">Talk Bubble</h2>
+      <div class="talk-bubble"></div><br>
+      <hr>
+
+      <h2 id="rss">RSS Feed</h2>
+      <div class="rss"></div><br><br>
+      <hr>
+
+      <h2 id="12brust">12 Points Brust</h2>
+      <br>
+      <div class="burst"></div><br><br><br>
+      <hr>
+
+      <h2 id="neg">Yin Yang</h2>
+      <div class="yin-yang"></div><br>
+      <hr>
+      
+      <h2 id="badge">Badge Ribbon</h2>
+      <div class="badge-ribbon"></div><br><br><br>
+      <hr>
+
+      <h2 id="space">Space Invader</h2>
+      <div class="space-invader"></div><br>
+      <hr>
+
+      <h2 id="tv">Youtube-TV screen</h2>
+      <div class="tv"></div><br>
+      <hr>
+
+      <h2 id="glass">Magnifying Glass</h2>
+      <div class="mag-glass"></div><br><br><br>
+      <hr>
+
+      <h2 id="facebook">Facebook Icon</h2>
+      <div class="facebook-icon"></div><br>
+      <hr>
+
+      <h2 id="moon">Moon</h2>
+      <div class="moon"></div><br><br><br>
+      <hr>
+
+      <h2 id="lock">Door Lock</h2>
+      <div class="lock"></div><br>
+      <hr>
+    </center>
+
+  </div>
+</body>
+
+</html>

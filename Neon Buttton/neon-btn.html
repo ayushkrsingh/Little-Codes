@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Button</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Comfortaa', cursive;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    background-color: #00171b;
+    animation: hue 7s ease-in-out infinite;
+}
+@keyframes hue{
+    0%{
+    filter: hue-rotate(0deg);
+    }
+    100%{
+    filter: hue-rotate(0deg);
+    }
+    50%{
+    filter: hue-rotate(360deg);
+    }
+}
+.box .btn{
+    position: relative;
+    height: 6rem;
+    width: 20rem;
+    background: #97979710;
+    border-radius: 20rem;
+    border: 2px solid #d6efff77;
+    overflow: hidden;
+    backdrop-filter: blur(30px);
+    transition: .4s;
+}
+.box .btn::after{
+    content: '';
+    position: absolute;
+    bottom: -8rem;
+    left: 0;
+    height: 160%;
+    width: 100%;
+    background: linear-gradient(#00e2b157, #1af7ff00);
+    transform: skewY(14deg);
+    backdrop-filter: blur(20px);
+    border-top: 3px solid #004e2131;
+    pointer-events: none;
+    transition: .5s;
+    transition-delay: 0.4s;
+}
+.box .btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -48%;
+    background: #00faaf;
+    border-radius: 20rem;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    transition: .8s;
+}
+.box .btn a{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    backdrop-filter: blur(20px);
+}
+.box .btn:hover{
+    box-shadow: 0 0 30px 2px #02fdf03a;
+}
+.box .btn:hover::before{
+    transform: scale(5);
+    background: #002a31;
+}
+.box .btn:hover::after{
+    bottom: -8rem;
+    left: -7rem;
+    background: #0042442f;
+    transform: skewY(40deg);
+    border-top: 1px solid #00e660ad;
+}
+.box .btn:nth-child(1):hover{
+    background: #fbff00;
+}
+.box .btn:nth-child(2):hover{
+    background: #1eff00;
+}
+.box .btn:nth-child(3):hover{
+    background: #1100ff;
+}
+
+@media (max-width: 710px) {
+    .box{
+        flex-direction: column;
+    }
+}
+@media (max-width: 200px) {
+    html{
+        font-size: 45%;
+    }
+}
+    
+</style>
+<body>
+    <div class="box">
+        <div class="btn"><a href="#">Hover Me</a></div>
+        <div class="btn"><a href="#">Hover Me</a></div>
+        <div class="btn"><a href="#">Hover Me</a></div>
+    </div>
+</body>
+</html>
