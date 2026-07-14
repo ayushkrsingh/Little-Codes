@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-weight: 900;
+}
+
+body{
+    background: #fffcf3;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #939393 1px, transparent 1px),
+    linear-gradient(to bottom, #939393 1px, transparent 1px);
+    background-size: 4vh 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.cursor{
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    pointer-events: none;
+}
+
+.cursor .text{
+    position: absolute;
+    font-size: 2em;
+    color: deeppink;
+    text-shadow: 0 0 15px cyan,
+    0 0 50px white;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+
+}
